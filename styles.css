@@ -1,0 +1,59 @@
+*{
+    background-color: aqua;}
+
+
+p{
+    font-size: 15px;
+    color: brown;
+}
+
+h3{
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+strong{
+    color: blue;
+}
+
+.tituloprincipal{
+    color: rgb(255, 300, 0, 0.5);
+}
+
+.tabla{
+    border-collapse: collapse;
+    width: 50%;
+}
+td{
+    border: 1px solid black;
+}
+
+.imagen{
+    border-radius: 20px;
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.8);
+    
+}
+ /* .container{
+    display: flex;
+     flex-wrap: nowrap; 
+    
+
+}  */
+
+/* lista  */
+  .container{
+    display: flex;
+    justify-content: center;
+  }
+
+
+/* imagen */
+/* .contenedor{
+    display: flex;
+    flex-direction: column;
+} */
+
+.contenedor{
+    display: flex;
+    flex-direction: column;
+}
