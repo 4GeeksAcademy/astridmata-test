@@ -70,3 +70,78 @@ td{
     flex-direction: row ;
     justify-content: space-between;
 }
+
+
+/* .box{
+    border: 2px solid black;
+    height: 300px;
+   margin-bottom: 300px;
+   position: relative;
+}
+.box .one{
+    border: 2px solid red;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    bottom: 0%; 
+     top: 0%;
+    right: 0px;
+} */
+
+
+/* menu fijo 
+.box{
+    border: 2px solid black;
+    height: 300px;
+   margin-bottom: 300px;
+   
+}
+.box .one{
+    border: 2px solid red;
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    top: 0px;
+} */
+
+
+/* margin y padin  */
+/* .box{
+    border: 2px solid black;
+    height: 300px;
+   margin-bottom: 300px;
+   
+}
+.box .one{
+    border: 2px solid red;
+    width: 50px;
+    height: 50px;
+    margin: 20px;
+
+    margin-top: 50px;
+    margin-left: 100px;
+    margin: 100px 10px 20px 100px;
+
+} */
+
+/* display flex recomendado  */
+
+.box{
+    border: 2px solid black;
+    height: 300px;
+   margin-bottom: 300px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.box .one{
+    border: 2px solid red;
+    width: 50px;
+    height: 50px;
+    display: flex;
+   justify-content: center;
+   align-items: center;
+
+}
