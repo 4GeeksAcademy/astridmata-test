@@ -1,6 +1,18 @@
-*{
-    background-color: aqua;}
+/* *{
+    background-color: aqua;} */
+body{
+    background-color: violet !important;
+}
 
+
+
+#fondo2{
+    background-color: blue;
+}
+
+.fondo{
+    background-color: aqua;
+}
 
 p{
     font-size: 15px;
