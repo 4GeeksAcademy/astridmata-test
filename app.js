@@ -17,26 +17,16 @@ for (let i = 0; i < numeros.length; i++) {
   console.log(numeros[i] * 2);
 }
 
-// Ejemplo 2: Iterar un array de objetos
-// Tienes un array de objetos y quieres imprimir el nombre de cada persona.
 
-const personas = [
-    { nombre: 'Ana', edad: 28 },
-    { nombre: 'Luis', edad: 22 },
-    { nombre: 'Maria', edad: 32 }
-  ];
-  
-  for (let i = 0; i < personas.length; i++) {
-    console.log(personas[i].nombre);
-  }
+// Ejemplo 2: Recorrer un string carácter por carácter
+// Puedes usar un for para iterar sobre cada carácter de un string:
 
-// Ejemplo 3: Crear una tabla de multiplicar
-// Usando un for para generar una tabla de multiplicar del número 5:
-const numero = 5;
+const palabra = "JavaScript";
 
-for (let i = 1; i <= 10; i++) {
-  console.log(`${numero} x ${i} = ${numero * i}`);
+for (let i = 0; i < palabra.length; i++) {
+  console.log(palabra[i]);
 }
+// En resumen, este ejemplo muestra cómo recorrer un string en JavaScript usando un bucle for, accediendo a cada carácter por su índice y imprimiéndolo en la consola. Es una forma común de trabajar con strings en JavaScript, y se puede aplicar en diversos contextos, como contar caracteres, buscar un carácter específico, o transformar la cadena de texto.
 
 //---------------------------------FOR ANIDADO -----------------------------------
 // Un bucle for anidado es un bucle for dentro de otro bucle for. Se utiliza cuando necesitas recorrer una estructura bidimensional (como una matriz o tabla), o cuando quieres realizar operaciones en varias combinaciones de elementos.
@@ -216,3 +206,155 @@ console.log(primerNumeroMayorQueTres); // 4
 // Los bucles (for, while) son imperativos: tú controlas cada paso de la iteración y cómo se maneja cada elemento.
 // Devuelven nuevos arrays (map, filter) o elementos específicos (find), mientras que un bucle for o while no devuelve un array o resultado a menos que lo especifiques manualmente.
 
+// la clase real 
+
+console.log("lunes 7");
+
+//For 
+// for (let index = 0; index < array.length; index++) {
+//     const element = array[index];
+    
+// }
+
+//ejemplo 1  
+let numeros=[1, 2, 3, 4, 5]
+
+for (let i = 0; i < numeros.length; i++) {
+    console.log(numeros[i] *2 );
+    
+}
+
+//ejemplo 2:
+
+let palabra = "Javascript"
+
+for (let index = 0; index < palabra.length; index++) {
+    console.log(palabra[index]);
+        
+}
+
+// for anidado
+
+let frutas = ["manzana", " banana", "uva", "naranja"] 
+let colores =["rojo", "verde", "amarillo"]
+
+for (let index = 0; index < frutas.length; index++) {
+    console.log(`fruta: ${frutas[index]}`);
+    
+    for (let j = 0; j < colores.length; j++) {
+        console.log(`posibles colores: ${colores[j]}`);
+        
+    }
+}
+
+// forEach
+
+let datosPersonas = [{nombre:"ana", edad:22},{nombre:"carlos", edad:24},{nombre:"luis", edad:30}]
+datosPersonas.forEach((persona)=>{
+    console.log(`Nombre: ${persona.nombre}`);
+    
+})
+
+//ejemplo 2
+
+let sumaNumeros=[23, 45, 78, 12, 1, 9]
+let suma = 0
+sumaNumeros.forEach((numeros)=>{
+    suma += numeros
+})
+console.log("suma total:", suma);
+
+//while
+
+let contador = 0
+// while(contador < 5){
+//    console.log(contador);
+   
+//     contador ++ // incrementar en 1 el valor 
+// }
+
+while(true) {
+    console.log(`contador: ${contador}`);
+    if (contador===10){
+        console.log("deteniendo el bucle");
+        break
+    }
+contador ++    
+}
+console.log("el bucle se ha detenido ");
+
+
+
+//otro ejemplo
+// let contraseña = "12345"
+// let contraseñaIngresada= ""
+
+// while(contraseñaIngresada !== contraseña){
+//     contraseñaIngresada = prompt("introduce la contraseña correcta")
+// }
+// console.log("contraseña correcta!!");
+
+//map filter find 
+
+//map
+
+let digitos = [1,7,3,9]
+let numerosMultiplicados = digitos.map(numeros => numeros*2 )
+console.log(numerosMultiplicados);
+
+// filter 
+
+// let valores= [1,2,3,4]
+// let numerosPares = valores.filter(numero => numero % 2 === 0)
+
+// console.log(numerosPares)
+
+
+// // find
+
+// let primerNumeroMayorQueTres= valores.find(numeros=>numeros >3)
+// console.log(primerNumeroMayorQueTres);
+
+// usando for ordenar un array de numeros de mayor a menor
+
+let valores = [5, 8, 1, 3, 7, 10, 2]
+//Bubble sort
+for (let index = 0; index < valores.length; index++) {
+    for (let j = 0; j < valores.length -1; j++) {
+        if (valores[j] < valores[j+1]){
+            let temp= valores[j]
+            valores[j]= valores [j +1]
+            valores [j+1] = temp
+        }
+        
+    }
+    
+}
+console.log("array ordenado demayor a menor:", valores);
+
+///otro ejemplo 
+valores.sort(function (a, b) {
+    return b -a 
+})
+
+// valores.reverse()
+console.log("array ordenado:", valores);
+
+
+// ejemplo corto 
+// let numeros = [34, 6, 67, 254, 92, 9]
+// Ordenar de menor a mayor:
+// let menorAMayor = numeros.sort((a, b)=> a-b)
+
+// Ordenar de mayor a menor:
+// let mayorAMenor = numeros.sort((a, b)=> b-a)
+// Solución corta.
+// Por debajo es probable que haga exactamente lo mismo.
+// Ya que a y b hacen referencia a dos elementos del array.
+// El que está tomando en el momento y el siguiente.
+
+
+let autos = [
+    {tipo:'Volvo', año:2016},     {tipo:'Saab', año:2001},     {tipo:'BMW', año:2010}, {tipo:'BMW', año:2010}];
+    autos.sort(function(a, b) {return a.año - b.año});
+    console.log(autos); // --> [ {tipo: 'Saab', año: 2001}, {tipo: 'BMW', año: 2010}, {tipo: 'Volvo', año: 2016} ]
