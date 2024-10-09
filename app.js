@@ -98,24 +98,31 @@ if (apellido === "Ada") {
   console.log(`no eres Ada, eres: ${apellido}` )
 }
 
-//operador ternario 
-//condición ? valorSiVerdadero : valorSiFalso;
+//________________________________________________operador ternario 
+//estructura: condición ? valorSiVerdadero : valorSiFalso;
 
-// condición: La expresión que será evaluada (es el equivalente a la condición en una estructura if).
-// valorSiVerdadero: El valor que se devuelve si la condición es true.
-// valorSiFalso: El valor que se devuelve si la condición es false.
+//___ condición: La expresión que será evaluada (es el equivalente a la condición en una estructura if).
+//___ valorSiVerdadero: El valor que se devuelve si la condición es true.
+//___ valorSiFalso: El valor que se devuelve si la condición es false.
 
 apellido === "Ada" ? console.log(`Bienvenida ${apellido}`) : console.log(`no eres Ada, eres: ${apellido}` )
 
 //tiene un return implicito y actua como funcion pero lo importante es que me sirve para hacer un if else con informacion que yo puedo recuperar 
-// Resumen: Ventajas del operador ternario
-// Conciso: Permite evaluar condiciones en una sola línea, lo que hace el código más compacto.
-// Expresivo: Se puede usar para evaluaciones rápidas y directas en lugar de estructuras if-else.
-// Simplicidad: Ideal para condiciones simples donde no se necesita demasiada lógica.
+// Resumen: 
+//___Ventajas del operador ternario
+//__ Conciso: Permite evaluar condiciones en una sola línea, lo que hace el código más compacto.
+//__ Expresivo: Se puede usar para evaluaciones rápidas y directas en lugar de estructuras if-else.
+//__ Simplicidad: Ideal para condiciones simples donde no se necesita demasiada lógica.
 
-// A pesar de su utilidad, hay casos en los que el operador ternario puede hacer que el código sea difícil de leer, especialmente cuando se anidan o cuando la lógica es demasiado compleja. En estos casos, es mejor usar if-else o estructuras de control más claras.
-// Alternativa al ternario: && y ||
+//____ PERO A pesar de su utilidad, hay casos en los que el operador ternario puede hacer que el código sea difícil de leer, especialmente cuando se anidan o cuando la lógica es demasiado compleja. En estos casos, es mejor usar if-else o estructuras de control más claras.
+//__ cOMO OTRA Alternativa al ternario TIENEN : && y ||
 // Para condiciones simples donde solo necesitas evaluar si algo es true o false, a veces puedes usar los operadores lógicos && (AND) o || (OR).
 
 
+//ejemplo dentro de una funcion solo para que vean que se ve mas organizado 
+function obtenerDescuento(edad) {
+  return edad >= 65 ? "Tiene descuento" : "No tiene descuento";
+}
+
+console.log(obtenerDescuento(70)); // "Tiene descuento"
 //presentar el ejercicio
