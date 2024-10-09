@@ -1,360 +1,121 @@
-// El for loop es el más clásico y flexible. Permite ejecutar un bloque de código un número determinado de veces. La estructura básica es:
+//____tipos de datos: string, numericos, booleanos, null, undefined, array, funciones, odjetos
 
-// for (let index = 0; index < array.length; index++) {
-//     const element = array[index];
-    
+//____ya nosotros hemos trabajado en las practicas con varios de estos tipos de datos, trabajamos con array y funciones que son los mas complejos pero hoy nos toca hablar de objetos con mas detalles, tambien vamos a trabajar con templete literals y operadores ternarios.
 
-// Inicialización (let i = 0): define la variable de control.
-// Condición (i < array.length): verifica si el bucle debe continuar.
-// Incremento (i++): se ejecuta después de cada iteración.
-// Uso: Se utiliza cuando sabes cuántas veces quieres iterar un bloque de código.
+//____________________objetos_____________________
+// tiene una estructura {propiedad: "valor"}
 
-// Ejemplo 1: Iterando un array de números
-// Supongamos que tienes un array de números y quieres imprimir cada número multiplicado por 2.
-const numeros = [1, 2, 3, 4, 5];
+//___ Es una de las formas principales de organizar y gestionar datos en el lenguaje. Los objetos en JavaScript pueden contener tanto propiedades (atributos con valores) como métodos (funciones asociadas al objeto).
 
-for (let i = 0; i < numeros.length; i++) {
-  console.log(numeros[i] * 2);
-}
-
-
-// Ejemplo 2: Recorrer un string carácter por carácter
-// Puedes usar un for para iterar sobre cada carácter de un string:
-
-const palabra = "JavaScript";
-
-for (let i = 0; i < palabra.length; i++) {
-  console.log(palabra[i]);
-}
-// En resumen, este ejemplo muestra cómo recorrer un string en JavaScript usando un bucle for, accediendo a cada carácter por su índice y imprimiéndolo en la consola. Es una forma común de trabajar con strings en JavaScript, y se puede aplicar en diversos contextos, como contar caracteres, buscar un carácter específico, o transformar la cadena de texto.
-
-//---------------------------------FOR ANIDADO -----------------------------------
-// Un bucle for anidado es un bucle for dentro de otro bucle for. Se utiliza cuando necesitas recorrer una estructura bidimensional (como una matriz o tabla), o cuando quieres realizar operaciones en varias combinaciones de elementos.
-
-// Imaginen que tenemos una lista de frutas y para cada fruta queremos escribir varios colores posibles. Vamos a recorrer la lista de frutas y, por cada fruta, vamos a recorrer los colores. Esto se hace con un for anidado.
-
-const frutas = ['Manzana', 'Banana', 'Uva'];  // Lista de frutas
-const colores = ['Rojo', 'Verde', 'Amarillo'];  // Lista de colores
-
-// Bucle exterior: recorre cada fruta
-for (let i = 0; i < frutas.length; i++) {
-  console.log(`Fruta: ${frutas[i]}`);
+//Acceso a propiedades:
+let persona = {
+  nombre: "Juan",
+  edad: 30,
+  profesion: ["Desarrollador", "Teacher"],
+  saludar: function() {   
+    console.log("Hola, mi nombre es " + this.nombre); // En JavaScript, la palabra clave this es un mecanismo que hace referencia al contexto de ejecución actual, es decir, al objeto sobre el cual se está invocando el código. El valor de this cambia dependiendo de cómo y dónde se llama una función o se accede a un método.
   
-  // Bucle interior: recorre cada color
-  for (let j = 0; j < colores.length; j++) {
-    console.log(`  Posible color: ${colores[j]}`);
-  }
-}
+  },
+  "fecha de nacimiento": "09 de octubre de 1994" , //esto lo agrego luego 
+};
+console.log(persona);
 
-// ¿Qué hace este código?
-// Bucle exterior: Recorre la lista de frutas (primero la manzana, luego la banana, luego la uva).
-// Bucle interior: Por cada fruta, recorre la lista de colores (rojo, verde y amarillo) y muestra cada color posible.
+// ___Puedes acceder a los valores de las propiedades usando notación de punto (.) o notación de corchetes ([]).
+console.log(persona.nombre); // "Juan"  
+//____si yo quiero acsedes a teacher:
+console.log(persona.profesion[1]); //"teacher"
+//____otra forma
+console.log(persona["edad"]); // 30
 
-// Para cada fruta, el bucle dice su nombre con console.log(Fruta: ${frutas[i]}).
-// Bucle interior:
-// Por cada fruta, recorremos la lista de colores.
-// Mostramos cada color posible para la fruta con console.log( Posible color: ${colores[j]}).
-// ¿Por qué funciona así?
-// Primero, el bucle exterior toma la primera fruta, Manzana.
-// Luego, el bucle interior muestra todos los colores (Rojo, Verde, Amarillo) para la manzana.
-// Después, el bucle exterior sigue con la segunda fruta, Banana, y el bucle interior muestra de nuevo todos los colores para la banana.
-// Finalmente, el bucle exterior toma la última fruta, Uva, y el interior muestra los colores para la uva.
-// Resumen sencillo:
-// Un for anidado es como tener tareas dentro de otras tareas. En este ejemplo, por cada fruta (bucle exterior), revisamos todos los colores posibles (bucle interior). Así hacemos una combinación completa de frutas con colores.
+//___ahora como consulto saludar?? recuerden que esto es una funcion, ya habiamos visto como hacimaos para activar o llmar a una funcion 
+
+//___Métodos: Son funciones almacenadas como propiedades dentro del objeto. En el ejemplo, saludar es un método.
+//____ lo que pasa es que las funciones cuando viven dentro de un objeto es que cambian de nombre se pasan a conocer como "metodos" funcionan igual, lo que quiero con esto es que cuando lo vean en la documentacion donde les hablaran en lenguaje tecnico ustedes sepan a que se refiere 
+
+//hago el ejemplo de persona.saludar()
+//hago la comparacion con console.log()
+
+//___entonces si recuerdan cuando estudiamos los tipos de datos, teniamos datos primitivos y datos tipo objetos, donde estaban los array y los objetos literales
+// ____y es que si leen la definicion de js dice que es un lenguaje de tipado debil y que nacio siendo orientado a la web y que ademas esta orientado a objetos, por lo que muchas de sus figuras son objetos nativos. como es el caso del console.log
+
+//volvemos al ejemplo y muestro los metodos que tiene console y entre ellos log que es el que mas usamos.
+
+//____entonces los array son objetos debajo del capo (camuflados)
+//creo array 
+frutas= ["manzana", "naranja"]
+console.log(frutas);
+
+//muestro el array personas.profesion y comparo 0 y 1 con las propiedades de arriba nombre y edad.
+// luego muestro el length que tambien es una propiedad y tiene un valor
+//___ cuando queremos consultar el largo hacemos  fruta.length  y eso es igual a cualqiuiera de los de arriba
+//___ entonces cuando vimos los metodos de array (map, filter, find, sort y el reverse que se aplican solo a array) haciamos referencia a objetos como por ejemplo: a este array le quiero agregar la fruta fresa y uso push
+frutas.push("fresa")
+console.log(frutas);
+//___como yo se donde esta esa informacion? en la documentacion y ademas podriamos ver todos los metodos disponibles
+//
+// [[Prototype]]:Array(0)
+
+//__entonces porque hay dos formas de consultar un objeto?, con . y con [], 
+// ___Ventajas:
+// ___Sencillo y limpio: Es fácil de leer y escribir.
+// ___Sintaxis clara: Perfecto para propiedades con nombres sencillos.
+// ___Limitaciones:
+// ___No se puede usar si el nombre de la propiedad tiene caracteres especiales, números al principio, espacios, o es un identificador dinámico (es decir, el nombre de la propiedad es una variable).
+
+// ____ahora con [] Esta forma permite más flexibilidad, ya que puedes acceder a propiedades utilizando una cadena de texto (string) o una variable. Es útil cuando el nombre de la propiedad no es válido como identificador de JavaScript, o cuando el nombre de la propiedad es dinámico.
+//consultamos asi: persona["fecha de nacimiento"]
+
+//______________________________vamos a hablar de los templete literals
+//Los template literals (o plantillas literales) en JavaScript son una forma más avanzada y flexible de manejar cadenas de texto. los template literals permiten interpolar variables y expresiones directamente dentro de las cadenas, así como crear cadenas multilínea de manera más sencilla. en otras palabras concatenar de una forma mas rapida 
+
+/////////////////////ESTO EN LA CONSOLA///
+//"hola" + "chao"
+let texto = "como estas"
+// "hola " + texto
+
+// `hola ${texto}`;
+//___LES ESTOY MOSTRANDO ESTO PUES VAN A HACER HOY UN EJERCICIO QUE USA ESTA FORMA Y QUERIA QUE LA CONOCIERAN PARA QUE NO FUERA TAN COMPLICADO LA LECTURA DEL CODIGO QUE VAN A VER HOY. 
 
 
+// OTRO EJEMPLO 
+const nombre = "Juan";
+const edad = 30;
+
+const mensaje = `Hola, mi nombre es ${nombre.toUpperCase()} y tengo ${edad} años.`;
+console.log(mensaje); // "Hola, mi nombre es JUAN y tengo 30 años."
+
+//Los template literals son una herramienta poderosa y flexible que mejora el trabajo con cadenas en JavaScript, haciéndolas más expresivas y fáciles de manejar En general, los template literals mejoran la claridad y reducen la necesidad de concatenar.
 
 
-//---------- ¿Qué es forEach? ----------------------------
-// El método forEach es una forma más sencilla de iterar sobre los elementos de un array en comparación con un bucle for. Ejecuta una función para cada elemento del array y no devuelve un valor (a diferencia de map, que devuelve un nuevo array). Simplemente recorre el array y aplica la función a cada elemento.
+//___________vamos con los operadores ternarios, que no son mas que otra forma mas senciya de hacer el if, else que ya conocimos de una forma menos verbosa y con otros beneficios. 
 
-// array.forEach((elemento, índice, array) => {
-//     // Código a ejecutar por cada elemento
-//   });
+let apellido = "Ada"
 
-// elemento: El valor de cada elemento del array.
-// índice (opcional): La posición del elemento dentro del array.
-// array (opcional): El array original sobre el que estás iterando
-
-// Ejemplo 1: Sumar todos los números en un array
-// Puedes usar el forEach para recorrer un array y realizar alguna operación como sumar todos los valores.
-const sumanumeros = [10, 20, 30];
-let suma = 0;
-
-sumanumeros.forEach((numero) => {
-  suma += numero;
-});
-
-console.log('Suma total:', suma);
-
-// Ejemplo 2: Recorrer un array de objetos
-// El forEach es útil cuando trabajas con arrays de objetos. Supón que tienes un array de personas y quieres imprimir el nombre de cada persona.
-
-const datospersonas = [
-    { nombre: 'Ana', edad: 28, apellido: "lopez" },
-    { nombre: 'Luis', edad: 22, apellido: "lopez" },
-    { nombre: 'Maria', edad: 32, apellido: "lopez" }
-  ];
+if (apellido === "Ada") {
+  console.log(`Bienvenida ${apellido}`)
   
-  datospersonas.forEach((persona) => {
-    console.log(`Nombre: ${persona.nombre}, Edad: ${persona.edad}`);
-  });
-
-//   forEach es útil para iterar sobre arrays de una manera simple y clara.
-//   No devuelve un valor, solo ejecuta una función para cada elemento del array.
-//   Se usa cuando quieres hacer algo con cada elemento de un array, pero no modificar o transformar el array (para eso, usarías map).
-
-//------------------------------- ¿Qué es while?-------------------------------------
-// El bucle while ejecuta un bloque de código mientras una condición se mantenga verdadera (true). La condición se evalúa antes de ejecutar cada iteración, por lo que si la condición es false desde el principio, el código dentro del bucle no se ejecutará ni una sola vez.
-
-let contador = 0;
-
-while (contador < 5) {
-  console.log(contador);
-  contador++; // Incrementa el contador en 1
-}
-// En este ejemplo, el bucle se repite mientras contador sea menor que 5. Cada vez que el bucle se ejecuta, contador se incrementa en 1.
-
-
-
-// Ejemplo 2: Condición basada en una entrada de usuario
-// Imaginemos que queremos pedirle al usuario que ingrese una contraseña hasta que acierte la correcta.
-let contraseñaCorrecta = "12345";
-let contraseñaIngresada = "";
-
-while (contraseñaIngresada !== contraseñaCorrecta) {
-  contraseñaIngresada = prompt("Introduce la contraseña:");
+} else {
+  console.log(`no eres Ada, eres: ${apellido}` )
 }
 
-console.log("¡Contraseña correcta!");
+//operador ternario 
+//condición ? valorSiVerdadero : valorSiFalso;
 
-// Salida (dependerá del input del usuario)
-// Este bucle continuará solicitando la contraseña hasta que el usuario ingrese "12345".
+// condición: La expresión que será evaluada (es el equivalente a la condición en una estructura if).
+// valorSiVerdadero: El valor que se devuelve si la condición es true.
+// valorSiFalso: El valor que se devuelve si la condición es false.
 
+apellido === "Ada" ? console.log(`Bienvenida ${apellido}`) : console.log(`no eres Ada, eres: ${apellido}` )
 
+//tiene un return implicito y actua como funcion pero lo importante es que me sirve para hacer un if else con informacion que yo puedo recuperar 
+// Resumen: Ventajas del operador ternario
+// Conciso: Permite evaluar condiciones en una sola línea, lo que hace el código más compacto.
+// Expresivo: Se puede usar para evaluaciones rápidas y directas en lugar de estructuras if-else.
+// Simplicidad: Ideal para condiciones simples donde no se necesita demasiada lógica.
 
-/////////// CUIDADO CON ESTO Si no actualizas la condición dentro del bucle, puedes crear un bucle infinito. Esto significa que el bucle seguirá ejecutándose para siempre, lo cual puede causar problemas en tu programa.¡Recuerda siempre modificar la variable que controla la condición dentro del bucle!
+// A pesar de su utilidad, hay casos en los que el operador ternario puede hacer que el código sea difícil de leer, especialmente cuando se anidan o cuando la lógica es demasiado compleja. En estos casos, es mejor usar if-else o estructuras de control más claras.
+// Alternativa al ternario: && y ||
+// Para condiciones simples donde solo necesitas evaluar si algo es true o false, a veces puedes usar los operadores lógicos && (AND) o || (OR).
 
 
-
-//___________________ Diferencias entre while y for_______________________
-// while: Se usa cuando no sabes cuántas veces vas a necesitar repetir el bucle, y quieres que se repita mientras una condición sea verdadera.
-// for: Es más adecuado cuando sabes cuántas veces vas a iterar (por ejemplo, cuando tienes un número definido de elementos en un array).
-
-// Resumen
-// El bucle while es útil cuando no sabes con certeza cuántas veces debe repetirse el código. La clave es asegurarte de que la condición eventualmente cambie dentro del bucle para evitar bucles infinitos.
-
-//  -------NOS FALTA  map, filter y find PERO ELLOS son métodos de array, no exactamente "loops", aunque internamente funcionan de forma similar a un bucle (iteran sobre cada elemento del array). La diferencia clave es que son más declarativos y están diseñados para operaciones específicas en arrays. Vamos a ver cada uno en detalle y aclarar en qué se diferencian de los loops.
-
-// 1. ------------------map------------------------
-// map crea un nuevo array a partir de aplicar una función a cada elemento del array original. En lugar de modificar el array original, devuelve un array nuevo con los resultados.
-
-// Propósito: Transformar cada elemento del array.
-// Resultado: Un nuevo array con los elementos transformados.
-
-// Ejemplo:
-// Convertir un array de números en otro array con los números multiplicados por 2.
-
-const digitos = [1, 2, 3, 4, 5];
-
-const numerosMultiplicados = digitos.map(numero => numero * 2);
-
-console.log(numerosMultiplicados); // [2, 4, 6, 8, 10]
-// Notas:
-
-// map siempre devuelve un array del mismo tamaño que el array original.
-// No modifica el array original, sino que crea uno nuevo.
-
-// --------------------2. filter--------------------------
-// filter crea un nuevo array con los elementos que cumplen una condición. Recorre cada elemento del array y si la condición es true, el elemento se incluye en el nuevo array.
-
-// Propósito: Filtrar elementos que cumplan una determinada condición.
-// Resultado: Un nuevo array con los elementos que pasaron el filtro.
-
-const valores = [1, 2, 3, 4, 5, 6];
-
-const numerosPares = valores.filter(numero => numero % 2 === 0);
-
-console.log(numerosPares); // [2, 4, 6]
-// Notas:
-
-// filter devuelve un array más pequeño (o igual) que el original.
-// Si ningún elemento pasa el filtro, devuelve un array vacío.
-
-// 3. -----------------------find-----------------------------
-// find devuelve el primer elemento que cumple con una condición. A diferencia de filter, que devuelve todos los elementos que cumplen la condición, find solo devuelve uno. Si no encuentra ningún elemento, devuelve undefined.
-
-// Propósito: Encontrar el primer elemento que cumple con una condición.
-// Resultado: El primer elemento que cumple la condición, o undefined si no se encuentra.
-
-const digit = [1, 2, 3, 4, 5];
-
-const primerNumeroMayorQueTres = digit.find(numero => numero > 3);
-
-console.log(primerNumeroMayorQueTres); // 4
-// Notas:
-
-// find devuelve solo el primer elemento que cumple la condición.
-// Si ningún elemento cumple la condición, devuelve undefined.
-
-//------------- ¿Son lo mismo que los loops?-----------------------
-// No exactamente, aunque internamente iteran sobre los elementos del array, son métodos más declarativos que los bucles tradicionales como for o while. En lugar de escribir la lógica de la iteración manualmente (como en un for), usas estos métodos para expresar claramente lo que quieres hacer con el array.
-
-// ----------------Diferencias con los loops:-----------------------
-// map, filter y find son métodos de arrays, y se aplican directamente sobre arrays.
-// Estos métodos son declarativos, lo que significa que simplemente defines qué quieres hacer, no cómo hacerlo (el motor de JavaScript se encarga de los detalles).
-// Los bucles (for, while) son imperativos: tú controlas cada paso de la iteración y cómo se maneja cada elemento.
-// Devuelven nuevos arrays (map, filter) o elementos específicos (find), mientras que un bucle for o while no devuelve un array o resultado a menos que lo especifiques manualmente.
-
-// la clase real 
-
-console.log("lunes 7");
-
-//For 
-// for (let index = 0; index < array.length; index++) {
-//     const element = array[index];
-    
-// }
-
-//ejemplo 1  
-let numeros=[1, 2, 3, 4, 5]
-
-for (let i = 0; i < numeros.length; i++) {
-    console.log(numeros[i] *2 );
-    
-}
-
-//ejemplo 2:
-
-let palabra = "Javascript"
-
-for (let index = 0; index < palabra.length; index++) {
-    console.log(palabra[index]);
-        
-}
-
-// for anidado
-
-let frutas = ["manzana", " banana", "uva", "naranja"] 
-let colores =["rojo", "verde", "amarillo"]
-
-for (let index = 0; index < frutas.length; index++) {
-    console.log(`fruta: ${frutas[index]}`);
-    
-    for (let j = 0; j < colores.length; j++) {
-        console.log(`posibles colores: ${colores[j]}`);
-        
-    }
-}
-
-// forEach
-
-let datosPersonas = [{nombre:"ana", edad:22},{nombre:"carlos", edad:24},{nombre:"luis", edad:30}]
-datosPersonas.forEach((persona)=>{
-    console.log(`Nombre: ${persona.nombre}`);
-    
-})
-
-//ejemplo 2
-
-let sumaNumeros=[23, 45, 78, 12, 1, 9]
-let suma = 0
-sumaNumeros.forEach((numeros)=>{
-    suma += numeros
-})
-console.log("suma total:", suma);
-
-//while
-
-let contador = 0
-// while(contador < 5){
-//    console.log(contador);
-   
-//     contador ++ // incrementar en 1 el valor 
-// }
-
-while(true) {
-    console.log(`contador: ${contador}`);
-    if (contador===10){
-        console.log("deteniendo el bucle");
-        break
-    }
-contador ++    
-}
-console.log("el bucle se ha detenido ");
-
-
-
-//otro ejemplo
-// let contraseña = "12345"
-// let contraseñaIngresada= ""
-
-// while(contraseñaIngresada !== contraseña){
-//     contraseñaIngresada = prompt("introduce la contraseña correcta")
-// }
-// console.log("contraseña correcta!!");
-
-//map filter find 
-
-//map
-
-let digitos = [1,7,3,9]
-let numerosMultiplicados = digitos.map(numeros => numeros*2 )
-console.log(numerosMultiplicados);
-
-// filter 
-
-// let valores= [1,2,3,4]
-// let numerosPares = valores.filter(numero => numero % 2 === 0)
-
-// console.log(numerosPares)
-
-
-// // find
-
-// let primerNumeroMayorQueTres= valores.find(numeros=>numeros >3)
-// console.log(primerNumeroMayorQueTres);
-
-// usando for ordenar un array de numeros de mayor a menor
-
-let valores = [5, 8, 1, 3, 7, 10, 2]
-//Bubble sort
-for (let index = 0; index < valores.length; index++) {
-    for (let j = 0; j < valores.length -1; j++) {
-        if (valores[j] < valores[j+1]){
-            let temp= valores[j]
-            valores[j]= valores [j +1]
-            valores [j+1] = temp
-        }
-        
-    }
-    
-}
-console.log("array ordenado demayor a menor:", valores);
-
-///otro ejemplo 
-valores.sort(function (a, b) {
-    return b -a 
-})
-
-// valores.reverse()
-console.log("array ordenado:", valores);
-
-
-// ejemplo corto 
-// let numeros = [34, 6, 67, 254, 92, 9]
-// Ordenar de menor a mayor:
-// let menorAMayor = numeros.sort((a, b)=> a-b)
-
-// Ordenar de mayor a menor:
-// let mayorAMenor = numeros.sort((a, b)=> b-a)
-// Solución corta.
-// Por debajo es probable que haga exactamente lo mismo.
-// Ya que a y b hacen referencia a dos elementos del array.
-// El que está tomando en el momento y el siguiente.
-
-
-let autos = [
-    {tipo:'Volvo', año:2016},     {tipo:'Saab', año:2001},     {tipo:'BMW', año:2010}, {tipo:'BMW', año:2010}];
-    autos.sort(function(a, b) {return a.año - b.año});
-    console.log(autos); // --> [ {tipo: 'Saab', año: 2001}, {tipo: 'BMW', año: 2010}, {tipo: 'Volvo', año: 2016} ]
+//presentar el ejercicio
