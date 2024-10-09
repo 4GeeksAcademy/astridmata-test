@@ -6,12 +6,16 @@
 // tiene una estructura {propiedad: "valor"}
 
 //___ Es una de las formas principales de organizar y gestionar datos en el lenguaje. Los objetos en JavaScript pueden contener tanto propiedades (atributos con valores) como métodos (funciones asociadas al objeto).
-
+//siempre delimitado por las llavez, donde voy a empezar a enumerar pares de propiedades y valores. 
 //Acceso a propiedades:
 let persona = {
   nombre: "Juan",
   edad: 30,
   profesion: ["Desarrollador", "Teacher"],
+  direccion: {
+    calle: "Calle Falsa 123",
+    ciudad: "Buenos Aires"
+  },
   saludar: function() {   
     console.log("Hola, mi nombre es " + this.nombre); // En JavaScript, la palabra clave this es un mecanismo que hace referencia al contexto de ejecución actual, es decir, al objeto sobre el cual se está invocando el código. El valor de this cambia dependiendo de cómo y dónde se llama una función o se accede a un método.
   
@@ -19,13 +23,12 @@ let persona = {
   "fecha de nacimiento": "09 de octubre de 1994" , //esto lo agrego luego 
 };
 console.log(persona);
-
+//ya sabemos declararlos, vamos a consultarlo:
 // ___Puedes acceder a los valores de las propiedades usando notación de punto (.) o notación de corchetes ([]).
 console.log(persona.nombre); // "Juan"  
 //____si yo quiero acsedes a teacher:
 console.log(persona.profesion[1]); //"teacher"
-//____otra forma
-console.log(persona["edad"]); // 30
+
 
 //___ahora como consulto saludar?? recuerden que esto es una funcion, ya habiamos visto como hacimaos para activar o llmar a una funcion 
 
@@ -47,7 +50,8 @@ console.log(frutas);
 
 //muestro el array personas.profesion y comparo 0 y 1 con las propiedades de arriba nombre y edad.
 // luego muestro el length que tambien es una propiedad y tiene un valor
-//___ cuando queremos consultar el largo hacemos  fruta.length  y eso es igual a cualqiuiera de los de arriba
+
+//___ cuando queremos consultar el largo hacemos  fruta.length  y eso es igual a cualquiera de los de arriba
 //___ entonces cuando vimos los metodos de array (map, filter, find, sort y el reverse que se aplican solo a array) haciamos referencia a objetos como por ejemplo: a este array le quiero agregar la fruta fresa y uso push
 frutas.push("fresa")
 console.log(frutas);
@@ -64,6 +68,12 @@ console.log(frutas);
 
 // ____ahora con [] Esta forma permite más flexibilidad, ya que puedes acceder a propiedades utilizando una cadena de texto (string) o una variable. Es útil cuando el nombre de la propiedad no es válido como identificador de JavaScript, o cuando el nombre de la propiedad es dinámico.
 //consultamos asi: persona["fecha de nacimiento"]
+
+
+
+
+
+
 
 //______________________________vamos a hablar de los templete literals
 //Los template literals (o plantillas literales) en JavaScript son una forma más avanzada y flexible de manejar cadenas de texto. los template literals permiten interpolar variables y expresiones directamente dentro de las cadenas, así como crear cadenas multilínea de manera más sencilla. en otras palabras concatenar de una forma mas rapida 
@@ -97,6 +107,10 @@ if (apellido === "Ada") {
 } else {
   console.log(`no eres Ada, eres: ${apellido}` )
 }
+
+
+
+
 
 //________________________________________________operador ternario 
 //estructura: condición ? valorSiVerdadero : valorSiFalso;
