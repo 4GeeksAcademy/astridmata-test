@@ -6,15 +6,15 @@
 // tiene una estructura {propiedad: "valor"}
 
 //___ Es una de las formas principales de organizar y gestionar datos en el lenguaje. Los objetos en JavaScript pueden contener tanto propiedades (atributos con valores) como métodos (funciones asociadas al objeto).
-//siempre delimitado por las llavez, donde voy a empezar a enumerar pares de propiedades y valores. 
-//Acceso a propiedades:
+//siempre delimitado por las llavez, donde voy a empezar a enumerar diferentes tipos de pares de propiedades y valores. 
+//ejemplo:
 let persona = {
   nombre: "Juan",
   edad: 30,
   profesion: ["Desarrollador", "Teacher"],
   direccion: {
     calle: "Calle Falsa 123",
-    ciudad: "Buenos Aires"
+    ciudad: "Caracas"
   },
   saludar: function() {   
     console.log("Hola, mi nombre es " + this.nombre); // En JavaScript, la palabra clave this es un mecanismo que hace referencia al contexto de ejecución actual, es decir, al objeto sobre el cual se está invocando el código. El valor de this cambia dependiendo de cómo y dónde se llama una función o se accede a un método.
@@ -22,6 +22,7 @@ let persona = {
   },
   "fecha de nacimiento": "09 de octubre de 1994" , //esto lo agrego luego 
 };
+//consultar
 console.log(persona);
 //ya sabemos declararlos, vamos a consultarlo:
 // ___Puedes acceder a los valores de las propiedades usando notación de punto (.) o notación de corchetes ([]).
@@ -30,21 +31,24 @@ console.log(persona.nombre); // "Juan"
 console.log(persona.profesion[1]); //"teacher"
 
 
-//___ahora como consulto saludar?? recuerden que esto es una funcion, ya habiamos visto como hacimaos para activar o llmar a una funcion 
+//___ahora: como consulto saludar?? recuerden que esto es una funcion, ya habiamos visto como hacimaos para activar o llmar a una funcion 
 
-//___Métodos: Son funciones almacenadas como propiedades dentro del objeto. En el ejemplo, saludar es un método.
+
+/////////hago el ejemplo de persona.saludar()
+/////////hago la comparacion con console.log()
+
 //____ lo que pasa es que las funciones cuando viven dentro de un objeto es que cambian de nombre se pasan a conocer como "metodos" funcionan igual, lo que quiero con esto es que cuando lo vean en la documentacion donde les hablaran en lenguaje tecnico ustedes sepan a que se refiere 
 
-//hago el ejemplo de persona.saludar()
-//hago la comparacion con console.log()
+//___Métodos: Son funciones almacenadas como propiedades dentro del objeto. En el ejemplo, saludar es un método.
+
 
 //___entonces si recuerdan cuando estudiamos los tipos de datos, teniamos datos primitivos y datos tipo objetos, donde estaban los array y los objetos literales
 // ____y es que si leen la definicion de js dice que es un lenguaje de tipado debil y que nacio siendo orientado a la web y que ademas esta orientado a objetos, por lo que muchas de sus figuras son objetos nativos. como es el caso del console.log
 
-//volvemos al ejemplo y muestro los metodos que tiene console y entre ellos log que es el que mas usamos.
+//volvemos al ejemplo y les muestro los metodos que tiene console y entre ellos log que es el que mas usamos.
 
 //____entonces los array son objetos debajo del capo (camuflados)
-//creo array 
+//si creamos un array frutas y lo desplegamos para ver las propiedades y los valores lo veremos 
 frutas= ["manzana", "naranja"]
 console.log(frutas);
 
@@ -140,3 +144,92 @@ function obtenerDescuento(edad) {
 
 console.log(obtenerDescuento(70)); // "Tiene descuento"
 //presentar el ejercicio
+
+
+//  _________________________________------------------------------la clase real fue esta:
+
+console.log("hola");
+
+//tipos de datos: string, numericos, boleanos, null, undefined, array, funciones, abjetos
+
+//objetos
+
+// {prpíedad: "valor"}
+
+let persona = {
+    nombre: "Juan",
+    edad: 30,
+    profesion: ["desarrollador", "teacher"],
+    direccion: {
+        calle: "calle falsa 123",
+        ciudad: "caracas"
+    },
+    saludar: function () {
+        console.log("hola, mi nombre es " + this.nombre);
+
+    },
+    "fecha de nacimiento": "09 de octubre de 1994"
+}
+console.log(persona);
+
+// consultarlos "." "[]"
+
+
+
+//templete literals
+
+// let nombre= "juan"
+// let edad = 38
+
+// let mensaje =  `hola, mi nombre es ${nombre.toUpperCase()} y tengo ${edad} años. `
+
+// console.log(mensaje);
+
+
+
+//operadores ternarios
+let apellido = "Lopez"
+
+if (apellido === "Lopez") {
+    console.log( `Bienvenido Sr. ${apellido} `);
+    
+} else {
+    console.log( `No eres Lopez, eres: ${apellido} `)    
+}
+
+
+// condicion ? valorSiEsVerdadero : valorSiEsFalso
+
+apellido === "Lopez" ? console.log( `Bienvenido Sr. ${apellido} `) : console.log( `No eres Lopez, eres: ${apellido} `)    
+
+// ejemplo de ternario anidado:
+
+let edad = 25
+
+const clasificacion = edad < 13 
+    ?  "Niño"
+        : edad < 18 
+            ? "Adolescente"
+              : edad < 65 
+                ? "Adulto"
+                  : "Senior";
+
+console.log(clasificacion) 
+
+//   ||    (or) 
+//   &&    (and)
+
+// ejemplo de calculadora (Hice este para una tarea es parecido)   
+
+function calculadora(a, b, operacion) {
+    return operacion === '+' ? a + b : operacion === '-' ? a - b : operacion === '*' ? a * b : operacion === '/' ? (b !== 0 ? a / b : 'Error: División por 0') : 'Operación no válida';
+  }
+  console.log(calculadora(10, 0, '/'));
+
+//otro ejmplo 
+  function obtenerDescuento(edad) {
+    return edad >=65 ? "tien descuento" : "no tienen descuento"
+      }
+
+  console.log(obtenerDescuento(70));
+  
