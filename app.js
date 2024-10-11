@@ -1,235 +1,145 @@
-//____tipos de datos: string, numericos, booleanos, null, undefined, array, funciones, odjetos
+//DOM Y EVENTOS
+//el objetivo de hoy es Manipular elementos dinámicamente. y Trabajar con eventos para hacer la página web interactiva.
 
-//____ya nosotros hemos trabajado en las practicas con varios de estos tipos de datos, trabajamos con array y funciones que son los mas complejos pero hoy nos toca hablar de objetos con mas detalles, tambien vamos a trabajar con templete literals y operadores ternarios.
 
-//____________________objetos_____________________
-// tiene una estructura {propiedad: "valor"}
+// ¿Qué es el DOM? (Document Object Model
+//     1. ¿Qué es el DOM?
+//     Teoría: El DOM (Document Object Model) es una representación estructurada del documento HTML como un árbol de nodos, donde cada nodo es una etiqueta, un atributo o un fragmento de texto. Con JavaScript, podemos interactuar con estos nodos para modificar su contenido, estructura o estilo.
 
-//___ Es una de las formas principales de organizar y gestionar datos en el lenguaje. Los objetos en JavaScript pueden contener tanto propiedades (atributos con valores) como métodos (funciones asociadas al objeto).
-//siempre delimitado por las llavez, donde voy a empezar a enumerar diferentes tipos de pares de propiedades y valores. 
-//ejemplo:
-let persona = {
-  nombre: "Juan",
-  edad: 30,
-  profesion: ["Desarrollador", "Teacher"],
-  direccion: {
-    calle: "Calle Falsa 123",
-    ciudad: "Caracas"
-  },
-  saludar: function() {   
-    console.log("Hola, mi nombre es " + this.nombre); // En JavaScript, la palabra clave this es un mecanismo que hace referencia al contexto de ejecución actual, es decir, al objeto sobre el cual se está invocando el código. El valor de this cambia dependiendo de cómo y dónde se llama una función o se accede a un método.
-  
-  },
-  "fecha de nacimiento": "09 de octubre de 1994" , //esto lo agrego luego 
-};
-//consultar
-console.log(persona);
-//ya sabemos declararlos, vamos a consultarlo:
-// ___Puedes acceder a los valores de las propiedades usando notación de punto (.) o notación de corchetes ([]).
-console.log(persona.nombre); // "Juan"  
-//____si yo quiero acsedes a teacher:
-console.log(persona.profesion[1]); //"teacher"
 
 
-//___ahora: como consulto saludar?? recuerden que esto es una funcion, ya habiamos visto como hacimaos para activar o llmar a una funcion 
-
-
-/////////hago el ejemplo de persona.saludar()
-/////////hago la comparacion con console.log()
-
-//____ lo que pasa es que las funciones cuando viven dentro de un objeto es que cambian de nombre se pasan a conocer como "metodos" funcionan igual, lo que quiero con esto es que cuando lo vean en la documentacion donde les hablaran en lenguaje tecnico ustedes sepan a que se refiere 
-
-//___Métodos: Son funciones almacenadas como propiedades dentro del objeto. En el ejemplo, saludar es un método.
-
-
-//___entonces si recuerdan cuando estudiamos los tipos de datos, teniamos datos primitivos y datos tipo objetos, donde estaban los array y los objetos literales
-// ____y es que si leen la definicion de js dice que es un lenguaje de tipado debil y que nacio siendo orientado a la web y que ademas esta orientado a objetos, por lo que muchas de sus figuras son objetos nativos. como es el caso del console.log
-
-//volvemos al ejemplo y les muestro los metodos que tiene console y entre ellos log que es el que mas usamos.
-
-//____entonces los array son objetos debajo del capo (camuflados)
-//si creamos un array frutas y lo desplegamos para ver las propiedades y los valores lo veremos 
-frutas= ["manzana", "naranja"]
-console.log(frutas);
-
-//muestro el array personas.profesion y comparo 0 y 1 con las propiedades de arriba nombre y edad.
-// luego muestro el length que tambien es una propiedad y tiene un valor
-
-//___ cuando queremos consultar el largo hacemos  fruta.length  y eso es igual a cualquiera de los de arriba
-//___ entonces cuando vimos los metodos de array (map, filter, find, sort y el reverse que se aplican solo a array) haciamos referencia a objetos como por ejemplo: a este array le quiero agregar la fruta fresa y uso push
-frutas.push("fresa")
-console.log(frutas);
-//___como yo se donde esta esa informacion? en la documentacion y ademas podriamos ver todos los metodos disponibles
-//
-// [[Prototype]]:Array(0)
-
-//__entonces porque hay dos formas de consultar un objeto?, con . y con [], 
-// ___Ventajas:
-// ___Sencillo y limpio: Es fácil de leer y escribir.
-// ___Sintaxis clara: Perfecto para propiedades con nombres sencillos.
-// ___Limitaciones:
-// ___No se puede usar si el nombre de la propiedad tiene caracteres especiales, números al principio, espacios, o es un identificador dinámico (es decir, el nombre de la propiedad es una variable).
-
-// ____ahora con [] Esta forma permite más flexibilidad, ya que puedes acceder a propiedades utilizando una cadena de texto (string) o una variable. Es útil cuando el nombre de la propiedad no es válido como identificador de JavaScript, o cuando el nombre de la propiedad es dinámico.
-//consultamos asi: persona["fecha de nacimiento"]
-
-
-
-
-
-
-
-//______________________________vamos a hablar de los templete literals
-//Los template literals (o plantillas literales) en JavaScript son una forma más avanzada y flexible de manejar cadenas de texto. los template literals permiten interpolar variables y expresiones directamente dentro de las cadenas, así como crear cadenas multilínea de manera más sencilla. en otras palabras concatenar de una forma mas rapida 
-
-/////////////////////ESTO EN LA CONSOLA///
-//"hola" + "chao"
-let texto = "como estas"
-// "hola " + texto
-
-// `hola ${texto}`;
-//___LES ESTOY MOSTRANDO ESTO PUES VAN A HACER HOY UN EJERCICIO QUE USA ESTA FORMA Y QUERIA QUE LA CONOCIERAN PARA QUE NO FUERA TAN COMPLICADO LA LECTURA DEL CODIGO QUE VAN A VER HOY. 
-
-
-// OTRO EJEMPLO 
-const nombre = "Juan";
-const edad = 30;
-
-const mensaje = `Hola, mi nombre es ${nombre.toUpperCase()} y tengo ${edad} años.`;
-console.log(mensaje); // "Hola, mi nombre es JUAN y tengo 30 años."
-
-//Los template literals son una herramienta poderosa y flexible que mejora el trabajo con cadenas en JavaScript, haciéndolas más expresivas y fáciles de manejar En general, los template literals mejoran la claridad y reducen la necesidad de concatenar.
-
-
-//___________vamos con los operadores ternarios, que no son mas que otra forma mas senciya de hacer el if, else que ya conocimos de una forma menos verbosa y con otros beneficios. 
-
-let apellido = "Ada"
-
-if (apellido === "Ada") {
-  console.log(`Bienvenida ${apellido}`)
-  
-} else {
-  console.log(`no eres Ada, eres: ${apellido}` )
-}
-
-
-
-
-
-//________________________________________________operador ternario 
-//estructura: condición ? valorSiVerdadero : valorSiFalso;
-
-//___ condición: La expresión que será evaluada (es el equivalente a la condición en una estructura if).
-//___ valorSiVerdadero: El valor que se devuelve si la condición es true.
-//___ valorSiFalso: El valor que se devuelve si la condición es false.
-
-apellido === "Ada" ? console.log(`Bienvenida ${apellido}`) : console.log(`no eres Ada, eres: ${apellido}` )
-
-//tiene un return implicito y actua como funcion pero lo importante es que me sirve para hacer un if else con informacion que yo puedo recuperar 
-// Resumen: 
-//___Ventajas del operador ternario
-//__ Conciso: Permite evaluar condiciones en una sola línea, lo que hace el código más compacto.
-//__ Expresivo: Se puede usar para evaluaciones rápidas y directas en lugar de estructuras if-else.
-//__ Simplicidad: Ideal para condiciones simples donde no se necesita demasiada lógica.
-
-//____ PERO A pesar de su utilidad, hay casos en los que el operador ternario puede hacer que el código sea difícil de leer, especialmente cuando se anidan o cuando la lógica es demasiado compleja. En estos casos, es mejor usar if-else o estructuras de control más claras.
-//__ cOMO OTRA Alternativa al ternario TIENEN : && y ||
-// Para condiciones simples donde solo necesitas evaluar si algo es true o false, a veces puedes usar los operadores lógicos && (AND) o || (OR).
-
-
-//ejemplo dentro de una funcion solo para que vean que se ve mas organizado 
-function obtenerDescuento(edad) {
-  return edad >= 65 ? "Tiene descuento" : "No tiene descuento";
-}
-
-console.log(obtenerDescuento(70)); // "Tiene descuento"
-//presentar el ejercicio
-
-
-//  _________________________________------------------------------la clase real fue esta:
-
-console.log("hola");
-
-//tipos de datos: string, numericos, boleanos, null, undefined, array, funciones, abjetos
-
-//objetos
-
-// {prpíedad: "valor"}
-
-let persona = {
-    nombre: "Juan",
-    edad: 30,
-    profesion: ["desarrollador", "teacher"],
-    direccion: {
-        calle: "calle falsa 123",
-        ciudad: "caracas"
-    },
-    saludar: function () {
-        console.log("hola, mi nombre es " + this.nombre);
-
-    },
-    "fecha de nacimiento": "09 de octubre de 1994"
-}
-console.log(persona);
-
-// consultarlos "." "[]"
-
-
-
-//templete literals
-
-// let nombre= "juan"
-// let edad = 38
-
-// let mensaje =  `hola, mi nombre es ${nombre.toUpperCase()} y tengo ${edad} años. `
-
-// console.log(mensaje);
-
-
-
-//operadores ternarios
-let apellido = "Lopez"
-
-if (apellido === "Lopez") {
-    console.log( `Bienvenido Sr. ${apellido} `);
+//________________ Selección de Elementos del DOM
+//     Teoría: Para modificar un elemento en el DOM, primero debemos seleccionarlo. JavaScript nos proporciona varios métodos para seleccionar elementos:
     
-} else {
-    console.log( `No eres Lopez, eres: ${apellido} `)    
-}
+//     document.getElementById(id): Selecciona un elemento por su id.
+
+//     document.getElementsByClassName(className): Selecciona todos los elementos que tienen una clase específica.
+
+//     document.getElementsByTagName(tagName): Selecciona todos los elementos con una etiqueta específica (ejemplo: p, div).
+
+//     document.querySelector(selector): Selecciona el primer elemento que coincida con un selector CSS.
+
+//     document.querySelectorAll(selector): Selecciona todos los elementos que coincidan con un selector CSS.
 
 
-// condicion ? valorSiEsVerdadero : valorSiEsFalso
+// EJEMPLO 1
+    // Selección de elementos
+const titulo = document.getElementById('titulo');
 
-apellido === "Lopez" ? console.log( `Bienvenido Sr. ${apellido} `) : console.log( `No eres Lopez, eres: ${apellido} `)    
 
-// ejemplo de ternario anidado:
 
-let edad = 25
 
-const clasificacion = edad < 13 
-    ?  "Niño"
-        : edad < 18 
-            ? "Adolescente"
-              : edad < 65 
-                ? "Adulto"
-                  : "Senior";
 
-console.log(clasificacion) 
+//__________________Manipulación de Contenido___________________________
+// Teoría: Una vez que tenemos seleccionado un elemento, podemos modificar su contenido usando propiedades como:
 
-//   ||    (or) 
-//   &&    (and)
+// textContent: Modifica el contenido de texto de un elemento.
+// innerHTML: Modifica el contenido HTML de un elemento (permitiendo agregar etiquetas HTML).
 
-// ejemplo de calculadora (Hice este para una tarea es parecido)   
+// Modificación de texto
+const titulo1 = document.getElementById('titulo');
+titulo.textContent = '¡Este es el nuevo título!'; //
+//Usamos document.getElementById('titulo') para seleccionar el elemento <h1>. Luego, con textContent, modificamos el texto del título a "¡Este es el nuevo título!".
 
-function calculadora(a, b, operacion) {
-    return operacion === '+' ? a + b : operacion === '-' ? a - b : operacion === '*' ? a * b : operacion === '/' ? (b !== 0 ? a / b : 'Error: División por 0') : 'Operación no válida';
+// Ejemplo 2: Modificar el contenido de un párrafo, añadiendo etiquetas HTML
+// HTML:
+const descripcion = document.getElementById('descripcion');
+descripcion.innerHTML = 'Este es el <strong>nuevo</strong> párrafo con texto <em>modificado</em>.'; 
+
+// Aquí seleccionamos el párrafo por su ID, y luego, con innerHTML, reemplazamos su contenido con texto que incluye etiquetas HTML (<strong> y <em> para dar énfasis y cursiva). innerHTML permite insertar y manipular HTML dentro de un elemento.
+
+
+// Crear un nuevo elemento (segundo ejemplo)
+const nuevoParrafo = document.createElement('p');
+nuevoParrafo.textContent = 'Este es un nuevo párrafo.';
+document.body.appendChild(nuevoParrafo);
+// Usamos document.createElement('p') para crear un nuevo párrafo. Luego le añadimos texto usando textContent, y finalmente lo agregamos al DOM con appendChild, lo que lo coloca al final del cuerpo del documento.
+
+
+
+
+//____________________Modificación de Estilos (CSS)_______________________
+//teoría: Podemos cambiar el estilo de los elementos de forma dinámica con la propiedad style. 
+
+const titulos = document.getElementById('titulo');
+  titulos.style.color = 'blue'; // Cambiar color directamente
+
+//ejemplo Cambiar múltiples estilos (tamaño de fuente, color y alineación)
+const parrafo = document.getElementById('descripcion');
+parrafo.style.fontSize = '20px'; // Cambia el tamaño de la fuente
+parrafo.style.color = 'green';   // Cambia el color del texto a verde
+parrafo.style.textAlign = 'center'; // Centra el texto
+
+
+
+
+
+  //______________________Manejo de Eventos
+//Teoría: Un evento es una acción que ocurre en la página web, como un clic, el paso del ratón sobre un elemento, la escritura en un campo de texto, etc. JavaScript nos permite "escuchar" estos eventos y ejecutar funciones en respuesta a ellos, usando el método addEventListener().
+  //  
+// Uso de addEventListener() para escuchar eventos.
+// Crear interactividad básica a través de eventos.
+
+// Algunos ejemplos comunes de eventos incluyen:
+
+// click: cuando un usuario hace clic en un elemento.
+// mouseover: cuando el usuario mueve el mouse sobre un elemento.
+// keydown: cuando una tecla es presionada.
+// submit: cuando un formulario es enviado.
+
+
+
+
+// Ejercicio 1: Hacer que un botón cambie el color de fondo al hacer clic.
+
+const botones = document.getElementById('boton');
+ //primer ejemplo de eventos 
+  botones.addEventListener('click', () => {
+    document.body.style.backgroundColor = 'lightgreen';
+  });
+
+  // El método addEventListener() se utiliza para asociar una función a un evento específico en un elemento. Es una forma flexible y moderna de manejar eventos
+
+
+
+//segundo ejemplo de eventos 
+
+const mostrarMensajeBtn = document.getElementById('mostrar-mensaje');
+// mostrarMensajeBtn selecciona el botón con id="mostrar-mensaje" para poder "escuchar" los clics que se hagan en él.
+const mensaje = document.getElementById('mensaje');
+// mensaje selecciona el párrafo con id="mensaje", que actualmente está oculto. Vamos a manipular su estilo para hacerlo visible cuando ocurra un clic.
+
+
+mostrarMensajeBtn.addEventListener('click', () => {
+    mensaje.style.display = 'block';});
+    // Usamos addEventListener('click', ...) para que la función asociada se ejecute cuando el usuario haga clic en el botón.
+    // Cuando el botón es clickeado, el estilo del párrafo cambia: mensaje.style.display = 'block';. Esto cambia el estilo CSS de display de none a block, lo que hace que el mensaje, que estaba oculto, ahora se muestre en la página.
+    //
+    //
+    //
+    //
+    //
+
+// tercer ejemplo de eventos
+    const boton = document.getElementById('cambiar-titulo');
+
+boton.addEventListener('click', () => {
+    titulo.textContent = '¡Título cambiado de nuevo!';
+});
+
+//ultimo ejemplo que usamos un botón para cambiar el color del texto de un párrafo
+const boton2 = document.getElementById('cambiar-color');
+const texto = document.getElementById('texto');
+//
+//
+// Añadir evento de clic
+boton2.addEventListener('click', () => {
+  // Comprobar el tamaño actual del texto
+  if (texto.style.color === 'black' ) {
+    // Si el color es negro o no está definido, cambiarlo a rojo
+    texto.style.color = 'red';
+  } else {
+      // Si ya es red, volver a negro
+      texto.style.color = 'black';
   }
-  console.log(calculadora(10, 0, '/'));
-
-//otro ejmplo 
-  function obtenerDescuento(edad) {
-    return edad >=65 ? "tien descuento" : "no tienen descuento"
-      }
-
-  console.log(obtenerDescuento(70));
-  
+});
