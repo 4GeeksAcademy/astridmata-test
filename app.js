@@ -37,9 +37,18 @@ const titulo = document.getElementById('titulo');
 // innerHTML: Modifica el contenido HTML de un elemento (permitiendo agregar etiquetas HTML).
 
 // Modificación de texto
+//les muestro desde la consola 
+//
+//document.getElementById("titulo").textContent = "hola mundo"
+//
+//volvemos al ejemplo mas grafico 
+
 const titulo1 = document.getElementById('titulo');
 titulo.textContent = '¡Este es el nuevo título!'; //
 //Usamos document.getElementById('titulo') para seleccionar el elemento <h1>. Luego, con textContent, modificamos el texto del título a "¡Este es el nuevo título!".
+
+
+
 
 // Ejemplo 2: Modificar el contenido de un párrafo, añadiendo etiquetas HTML
 // HTML:
